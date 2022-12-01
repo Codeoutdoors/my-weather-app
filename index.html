@@ -2,20 +2,101 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suzy's Weather App</title>
+    <title>Weather App</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
+      crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="src/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://kit.fontawesome.com/950d668718.js" crossorigin="anonymous"></script>
+  
   </head>
   <body>
-    <h1>Hello Me</h1>
-    <a href="https://www.netlify.com">Netlify</a>
-    <script src="script.js"></script>
+<div class="weather-app">
+
+ 
+
+
+        <div class="row">
+        <div class="col-7 search-form"> <form  id="search-form">
+          
+            <input type="search" autofocus="on" class="search-bar"  id="city-input" placeholder="Enter city name">
+            <input type="submit" value="Search" class="btn btn-primary search-button" id="search-button"> 
+          </div>
+          </form>
+          <div class="col-2 this-location" id="this-location">
+           <button input type = "submit"  class="btn btn-primary current-location-button" id="current-location-button" > <i class="fa-solid fa-location-dot"></i></button></div>
+          </div>
+
+
+
+          <ul class="current-search-summary">
+<li class="searched-city" id = "searched-city"></li>
+<li class="current-time" id="current-time"></li>
+<li id="searched-type"></li>
+</ul>
+
+
+
+    <div class="row today">
+      <div class="col"><span class="searched-temperature"><span id="searched-temperature"></span></span>°C</span>
+      </div>
+
+
+      <div class="col"> 
+        <ul>
+          <li>
+            Feels like: <span id="searched-feels"> </span>°C     
+          </li>
+          <li>
+        Humidity: <span id="searched-humidity"> </span>% 
+      </li>
+        <li>
+        Wind Speed: <span id="searched-wind"> </span>km/h
+      </li>
+      </ul>
+      </div>
+      </div>
+
+
+<div class="container five-day-forecast">
+
+      <div class="row ">
+        <div class="col "> <span class="day"><strong>Tue</strong></span></div>
+        <div class="col "><span class="day"><strong>Wed</strong></span></div>
+        <div class="col "><span class="day"><strong>Thu</strong></span></div>
+        <div class="col "><span class="day"><strong>Fri</strong></span></div>
+        <div class="col "><span class="day"><strong>Sat</strong></span></div>
+       
+
+      </div>
+
+      <div class="row ">
+        <div class="col "> <span class="circle">⛈️</span></div>
+        <div class="col "><span class="circle">🌧</span></div>
+        <div class="col "><span class="circle">🌦</span></div>
+        <div class="col "><span class="circle">🌨</span></div>
+        <div class="col "><span class="circle">⛅️</span></div>
+       
+
+      </div>
+
+        
+      <div class="row ">
+        <div class="col "> <span class="temperature">-1°</span></div>
+        <div class="col "> <span class="temperature">3°</span></div>
+        <div class="col "> <span class="temperature">2°</span></div>
+        <div class="col "> <span class="temperature">-4°</span></div>
+        <div class="col "> <span class="temperature">0°</span></div>
+       
+      </div>
+    </div>
+    <script src="src/script.js"></script> 
+    
   </body>
 </html>
