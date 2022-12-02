@@ -1,11 +1,14 @@
 .weather-app {
   border: solid 1px #a0a2a7;
   border-radius: 10px;
-  margin: 30px auto;
-  max-width: 700px;
+  margin-top: 40px;
+
   padding-top: 30px;
 }
-
+.container {
+  padding-left: 300px;
+  padding-right: 300px;
+}
 .favorites {
   color: #0d6efd;
   font-weight: 500;
@@ -50,7 +53,6 @@
 a:link {
   text-decoration: none;
 }
-
 li {
   color: #666e7f;
   list-style: none;
@@ -59,11 +61,18 @@ li {
   color: #666e7f;
   text-align: center;
   margin-left: -10px;
-  padding-left: 0px;
+  padding-left: 20px;
   margin-bottom: 10px;
 }
 .circle {
   border-radius: 50%;
   border: solid 1px #0d6efd;
   padding: 2px;
+}
+small {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+}
+.footer {
+  margin-left: 5px;
 }
