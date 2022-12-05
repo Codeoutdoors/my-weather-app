@@ -53,44 +53,46 @@ function defineCity(city) {
   let apiKey = "4b3503b2f08a729413c4d33ef1186004";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(defineLocationAqi);
   axios.get(apiUrl).then(displayWeatherInformation);
 }
+
+function defineLocationAqi(response) {
+  let apiKey = "4b3503b2f08a729413c4d33ef1186004";
+  let lat = response.data.coord.lat;
+  let lon = response.data.coord.lon;
+  let apiUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayAqi);
+}
+
+function defineMyLocation(response) {
+  let apiKey = "4b3503b2f08a729413c4d33ef1186004";
+  let units = "metric";
+  let lat = response.coords.latitude;
+  let lon = response.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayWeatherInformation);
+}
+function getCoords(response) {
+  let apiKey = "4b3503b2f08a729413c4d33ef1186004";
+  let lat = response.coords.latitude;
+  let lon = response.coords.longitude;
+  let apiUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayAqi);
+}
+
+function handleClick(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getCoords);
+  navigator.geolocation.getCurrentPosition(defineMyLocation);
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
   defineCity(city);
   document.querySelector("#search-form").reset();
 }
-function defineMyLocationAqi(position) {
-  let apiKey = "4b3503b2f08a729413c4d33ef1186004";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-  axios.get(apiUrl).then(displayAqi);
-}
-
-function defineMyLocation(position) {
-  let apiKey = "4b3503b2f08a729413c4d33ef1186004";
-  let units = "metric";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
-  axios.get(apiUrl).then(displayWeatherInformation);
-}
-
-function handleClick(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(defineMyLocation);
-  navigator.geolocation.getCurrentPosition(defineMyLocationAqi);
-}
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
-let userLocationButton = document.querySelector("#user-location-button");
-userLocationButton.addEventListener("click", handleClick);
-
-defineCity("Banff");
-
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
@@ -114,3 +116,11 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let userLocationButton = document.querySelector("#user-location-button");
+userLocationButton.addEventListener("click", handleClick);
+
+defineCity("Mumbai");
