@@ -6,7 +6,7 @@ body {
   margin-top: 50px;
 }
 
-.wrapper {
+.app-wrapper {
   max-width: 600px;
   margin: auto;
 }
@@ -46,4 +46,12 @@ small {
   font-size: small;
   background-color: #dac2c8;
   margin: auto;
+}
+
+.current-temperature .active {
+  color: black;
+  cursor: default;
+}
+.current-temperature .active .hover {
+  text-decoration: none;
 }

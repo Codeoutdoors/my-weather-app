@@ -17,89 +17,90 @@
   </head>
   <body>
     <div class="container">
-      <div class="wrapper">
+      <div class="app-wrapper">
         <div class="my-weather-app border">
-          <div class="clearfix">
-            <ul class="current-weather-info">
-              <li class="place-name" id="place-name">Newarre</li>
-              <li class="current-date" id="current-date">
-                Monday 4th December
-              </li>
-              <li class="current-time" id="current-time">17:45</li>
-              <li class="current-temperature" id="current-temperature">
-                Current temp: 34°C
-              </li>
-              <li class="current-feels-like" id="current-feels-like">
-                Feels like temp: 34°C
-              </li>
-              <li
-                class="current-description-icon"
-                id="current-description-icon"
-              ></li>
-              <li class="current-description" id="current-description">
-                Sunny
-              </li>
-              <li>
-                Air Quality:
-                <span
-                  class="current-air-quality"
-                  id="current-air-quality"
-                ></span>
-              </li>
-              <li class="current-visibility" id="current-visibility">
-                Visibility: distance?
-              </li>
-              <li class="current-pressure" id="current-pressure">
-                Pressure at sea level: unit?
-              </li>
-
-              <li class="current-humidity" id="current-humidity">
-                Relative Humidity: 65%
-              </li>
-              <li class="sunrise-time-today" id="sunrise-time-today">
-                Sunrise: 08:20
-              </li>
-              <li class="sunset-time-today" id="sunset-time-today">
-                Sunset: 19.52
-              </li>
-              <li class="current-wind-speed" id="current-wind-speed">
-                wind: 5km/h
-              </li>
-              <li class="current-wind-gust" id="current-wind-gust">
-                gust: 14km/h
-              </li>
-              <li class="current-wind-direction" id="current-wind-direction">
-                Direction: arrow? NNW
-              </li>
-            </ul>
-            <form class="row g-3 search-form" id="search-form">
-              <div class="col-auto">
-                <input
-                  type="search"
-                  autofocus="on"
-                  class="form-control"
-                  id="city-input"
-                  autocomplete="off"
-                />
-              </div>
-
-              <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3">
-                  Search
-                </button>
-              </div>
-
-              <div class="col-auto">
-                <button
-                  type="button"
-                  class="btn btn-info mb-3 user-location-button"
-                  id="user-location-button"
-                >
-                  📍
-                </button>
-              </div>
-            </form>
+          <div class="summary-container">
+            <strong
+              class="current-temperature"
+              id="current-temperature"
+            ></strong>
+            <span class="units"
+              ><a href="#" id="celsius-link" class="active"> °C </a> |
+              <a href="#" id="fahrenheit-link">°F </a></span
+            >
+            <span class="current-description" id="current-description"
+              >Sunny</span
+            >
+            <img
+              src=""
+              alt=" "
+              class="description-icon"
+              id="description-icon"
+            />
           </div>
+
+          <br /><br /><br />
+          <ul class="clearfix current-weather-info">
+            <li class="place-name" id="place-name">Newarre</li>
+            <li class="current-date" id="current-date">Monday 4th December</li>
+            <li class="current-time" id="current-time">17:45</li>
+
+            <li>
+              Air Quality:
+              <span class="current-air-quality" id="current-air-quality"></span>
+            </li>
+            <li class="current-visibility" id="current-visibility">
+              Visibility: distance?
+            </li>
+            <li class="current-pressure" id="current-pressure">
+              Pressure at sea level: unit?
+            </li>
+
+            <li class="current-humidity" id="current-humidity">
+              Relative Humidity: 65%
+            </li>
+            <li class="sunrise-time-today" id="sunrise-time-today">
+              Sunrise: 08:20
+            </li>
+            <li class="sunset-time-today" id="sunset-time-today">
+              Sunset: 19.52
+            </li>
+            <li class="current-wind-speed" id="current-wind-speed">
+              wind: 5km/h
+            </li>
+            <li class="current-wind-gust" id="current-wind-gust">
+              gust: 14km/h
+            </li>
+            <li class="current-wind-direction" id="current-wind-direction">
+              Direction: arrow? NNW
+            </li>
+          </ul>
+          <form class="row search-form" id="search-form">
+            <div class="col-auto">
+              <input
+                type="search"
+                autofocus="on"
+                class="form-control"
+                id="city-input"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+
+            <div class="col-auto">
+              <button
+                type="button"
+                class="btn btn-info user-location-button"
+                id="user-location-button"
+              >
+                📍
+              </button>
+            </div>
+          </form>
+
           <div class="inner-border rounded-circle">
             <select
               class="form-select priority-bar"
