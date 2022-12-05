@@ -32,17 +32,29 @@
               <li class="current-feels-like" id="current-feels-like">
                 Feels like temp: 34°C
               </li>
+              <li
+                class="current-description-icon"
+                id="current-description-icon"
+              ></li>
               <li class="current-description" id="current-description">
                 Sunny
+              </li>
+              <li>
+                Air Quality:
+                <span
+                  class="current-air-quality"
+                  id="current-air-quality"
+                ></span>
               </li>
               <li class="current-visibility" id="current-visibility">
                 Visibility: distance?
               </li>
               <li class="current-pressure" id="current-pressure">
-                Air pressure: unit?
+                Pressure at sea level: unit?
               </li>
+
               <li class="current-humidity" id="current-humidity">
-                Relative Humidity65%
+                Relative Humidity: 65%
               </li>
               <li class="sunrise-time-today" id="sunrise-time-today">
                 Sunrise: 08:20
@@ -59,20 +71,15 @@
               <li class="current-wind-direction" id="current-wind-direction">
                 Direction: arrow? NNW
               </li>
-              <li class="current-air-quality" id="current-air-quality">
-                Air Quality: Good
-              </li>
-              <li class="current-uv-index" id="current-uv-index">
-                UV Index: 0
-              </li>
             </ul>
-            <form class="row g-3 search-form">
+            <form class="row g-3 search-form" id="search-form">
               <div class="col-auto">
                 <input
                   type="search"
+                  autofocus="on"
                   class="form-control"
-                  id="location-search"
-                  placeholder="Weather location"
+                  id="city-input"
+                  autocomplete="off"
                 />
               </div>
 
