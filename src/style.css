@@ -13,13 +13,13 @@ body {
 .my-weather-app {
   color: #5a4257;
   padding: 10px;
-  background-image: url("images/background.jpg");
+  background-image: url("");
 }
 .current-weather-info {
+  float: right;
   padding: 0%;
   list-style: none;
-  float: left;
-  font-size: 10px;
+  font-size: 12px;
 }
 .search-form {
   float: right;
@@ -31,12 +31,9 @@ small {
   text-align: left;
 }
 
-.inner-border {
-  border: solid 2px;
-  height: 534px;
+.priority-container {
+  height: 200px;
   margin-top: 50px;
-  background: linear-gradient(#dac2c8, #c4d2e5);
-  opacity: 0.85;
 }
 .col-auto {
   padding-left: 0px;
@@ -44,14 +41,24 @@ small {
 .priority-bar {
   max-width: 230px;
   font-size: small;
-  background-color: #dac2c8;
+
   margin: auto;
 }
 
-.current-temperature .active {
-  color: black;
+.units {
+  font-weight: 800;
+}
+.units .active {
+  color: #5a4257;
+  cursor: text;
+  text-decoration: none;
+}
+.units .active .hover {
   cursor: default;
 }
-.current-temperature .active .hover {
-  text-decoration: none;
+.current-description {
+  text-transform: capitalize;
+}
+.description-icon {
+  float: left;
 }
