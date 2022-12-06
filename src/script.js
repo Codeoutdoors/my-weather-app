@@ -12,6 +12,31 @@ function displayAqi(response) {
   }
 }
 
+function degToCompass(degrees) {
+  let value = Math.floor(degrees / 22.5 + 0.5);
+  let direction = [
+    "N",
+    "NNE",
+    "NE",
+    "ENE",
+    "E",
+    "ESE",
+    "SE",
+    "SSE",
+    "S",
+    "SSW",
+    "SW",
+    "WSW",
+    "W",
+    "WNW",
+    "NW",
+    "NNW",
+  ];
+
+  document.querySelector("#current-wind-direction").innerHTML =
+    direction[value % 16];
+}
+
 function displayWeatherInformation(response) {
   document.querySelector("#place-name").innerHTML = response.data.name;
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -28,25 +53,62 @@ function displayWeatherInformation(response) {
 
   document.querySelector("#current-description").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#current-visibility").innerHTML =
-    response.data.visibility;
-  document.querySelector("#current-pressure").innerHTML =
-    response.data.main.pressure;
+  document.querySelector("#current-visibility").innerHTML = Math.round(
+    response.data.visibility / 1000
+  );
 
   document.querySelector("#current-humidity").innerHTML =
     response.data.main.humidity;
-  document.querySelector("#sunrise-time-today").innerHTML =
-    response.data.sys.sunrise;
-  document.querySelector("#sunset-time-today").innerHTML =
-    response.data.sys.sunset;
+
+  let localDate = new Date();
+  let localOffset = localDate.getTimezoneOffset() * 60000;
+
+  let timeUnix = response.data.dt * 1000;
+  let timeUTC = timeUnix + localOffset;
+  let time = new Date(timeUTC + 1000 * response.data.timezone);
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[time.getDay()];
+  let minute = ("0" + time.getMinutes()).slice(-2);
+  let hour = ("0" + time.getHours()).slice(-2);
+
+  let timeElement = document.querySelector("#current-time");
+
+  timeElement.innerHTML = ` ${hour}:${minute} on ${day}`;
+
+  let sunriseTimeToday = document.querySelector("#sunrise-time-today");
+  let sunriseUnix = response.data.sys.sunrise * 1000;
+  let sunriseUTC = sunriseUnix + localOffset;
+  let sunriseTime = new Date(sunriseUTC + 1000 * response.data.timezone);
+  let sunriseHours = String(sunriseTime.getHours()).padStart(2, `0`);
+  let sunriseMinutes = String(sunriseTime.getMinutes()).padStart(2, `0`);
+  let sunrise = `${sunriseHours}:${sunriseMinutes}`;
+  sunriseTimeToday.innerHTML = sunrise;
+
+  let sunsetTimeToday = document.querySelector("#sunset-time-today");
+  let sunsetUnix = response.data.sys.sunset * 1000;
+  let sunsetUTC = sunsetUnix + localOffset;
+  let sunsetTime = new Date(sunsetUTC + 1000 * response.data.timezone);
+  let sunsetHours = String(sunsetTime.getHours()).padStart(2, `0`);
+  let sunsetMinutes = String(sunsetTime.getMinutes()).padStart(2, `0`);
+  let sunset = `${sunsetHours}:${sunsetMinutes}`;
+  sunsetTimeToday.innerHTML = sunset;
+
   document.querySelector("#current-wind-speed").innerHTML = Math.round(
     response.data.wind.speed * 3.6
   );
-  document.querySelector("#current-wind-gust").innerHTML = Math.round(
-    response.data.wind.gust * 3.6
-  );
-  document.querySelector("#current-wind-direction").innerHTML =
-    response.data.wind.deg;
+
+  let degrees = response.data.wind.deg;
+
+  degToCompass(degrees);
 }
 
 function defineCity(city) {
@@ -123,4 +185,4 @@ searchForm.addEventListener("submit", handleSubmit);
 let userLocationButton = document.querySelector("#user-location-button");
 userLocationButton.addEventListener("click", handleClick);
 
-defineCity("Mumbai");
+defineCity("Banff");

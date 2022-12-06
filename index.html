@@ -20,61 +20,59 @@
       <div class="app-wrapper">
         <div class="my-weather-app border">
           <div class="summary-container">
+            It's <span class="current-time" id="current-time"></span> right now
+            in <span class="place-name" id="place-name"></span> and it's
             <strong
               class="current-temperature"
               id="current-temperature"
             ></strong>
+
             <span class="units"
               ><a href="#" id="celsius-link" class="active"> °C </a> |
               <a href="#" id="fahrenheit-link">°F </a></span
-            >
-            <span class="current-description" id="current-description"
-              >Sunny</span
-            >
+            >with
+            <span class="current-description" id="current-description"></span>
+            <br />
+          </div>
+          <div class="clearfix current-weather-info">
             <img
               src=""
               alt=" "
               class="description-icon"
               id="description-icon"
             />
-          </div>
-
-          <br /><br /><br />
-          <ul class="clearfix current-weather-info">
-            <li class="place-name" id="place-name">Newarre</li>
-            <li class="current-date" id="current-date">Monday 4th December</li>
-            <li class="current-time" id="current-time">17:45</li>
-
-            <li>
+            <button>
               Air Quality:
               <span class="current-air-quality" id="current-air-quality"></span>
-            </li>
-            <li class="current-visibility" id="current-visibility">
-              Visibility: distance?
-            </li>
-            <li class="current-pressure" id="current-pressure">
-              Pressure at sea level: unit?
-            </li>
+            </button>
+            <button>
+              Visibility:
+              <span class="current-visibility" id="current-visibility"></span>km
+            </button>
+            <button>
+              Humidity:
+              <span class="current-humidity" id="current-humidity"></span>%
+            </button>
+            <button>
+              <span class="sunrise-time-today" id="sunrise-time-today"></span>
 
-            <li class="current-humidity" id="current-humidity">
-              Relative Humidity: 65%
-            </li>
-            <li class="sunrise-time-today" id="sunrise-time-today">
-              Sunrise: 08:20
-            </li>
-            <li class="sunset-time-today" id="sunset-time-today">
-              Sunset: 19.52
-            </li>
-            <li class="current-wind-speed" id="current-wind-speed">
-              wind: 5km/h
-            </li>
-            <li class="current-wind-gust" id="current-wind-gust">
-              gust: 14km/h
-            </li>
-            <li class="current-wind-direction" id="current-wind-direction">
-              Direction: arrow? NNW
-            </li>
-          </ul>
+              Sunset:
+              <span class="sunset-time-today" id="sunset-time-today"></span>
+            </button>
+            <button>
+              Wind:
+              <span class="current-wind-speed" id="current-wind-speed"></span>
+              km/h
+
+              <br />
+
+              Direction:
+              <span
+                class="current-wind-direction"
+                id="current-wind-direction"
+              ></span>
+            </button>
+          </div>
           <form class="row search-form" id="search-form">
             <div class="col-auto">
               <input
@@ -101,7 +99,7 @@
             </div>
           </form>
 
-          <div class="inner-border rounded-circle">
+          <div class="priority-container">
             <select
               class="form-select priority-bar"
               aria-label="Default select example"
