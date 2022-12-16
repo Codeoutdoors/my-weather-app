@@ -1,13 +1,15 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+small {
+  text-align: left;
+}
 .container {
   margin-top: 50px;
 }
 
 .app-wrapper {
-  max-width: 600px;
+  max-width: 900px;
   margin: auto;
 }
 .my-weather-app {
@@ -15,11 +17,23 @@ body {
   padding: 10px;
   background-image: url("");
 }
-.current-weather-info {
-  float: right;
-  padding: 0%;
+.searched-summary-container {
+  float: left;
+  width: 250px;
+  text-align: center;
+}
+.summary-list {
   list-style: none;
-  font-size: 12px;
+}
+
+.place-name {
+  font-weight: 600;
+  text-decoration: underline wavy;
+}
+.search-form-container {
+  padding: 20px;
+  float: right;
+  max-width: 500px;
 }
 .search-form {
   float: right;
@@ -27,10 +41,14 @@ body {
   max-width: 450px;
 }
 
-small {
-  text-align: left;
-}
+.popover-container {
+  padding-top: 180px;
 
+  align-items: center;
+}
+.description-icon {
+  float: left;
+}
 .priority-container {
   height: 200px;
   margin-top: 50px;
@@ -58,7 +76,4 @@ small {
 }
 .current-description {
   text-transform: capitalize;
-}
-.description-icon {
-  float: left;
 }

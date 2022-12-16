@@ -19,28 +19,60 @@
     <div class="container">
       <div class="app-wrapper">
         <div class="my-weather-app border">
-          <div class="summary-container">
-            It's <span class="current-time" id="current-time"></span> right now
-            in <span class="place-name" id="place-name"></span> and it's
-            <strong
-              class="current-temperature"
-              id="current-temperature"
-            ></strong>
-
-            <span class="units"
-              ><a href="#" id="celsius-link" class="active"> °C </a> |
-              <a href="#" id="fahrenheit-link">°F </a></span
-            >with
-            <span class="current-description" id="current-description"></span>
-            <br />
+          <div class="searched-summary-container">
+            <div class="clearfix description-icon">
+              <img src="" alt=" " id="description-icon" />
+            </div>
+            <ul class="summary-list">
+              <li>
+                <div class="current-time" id="current-time"></div>
+              </li>
+              <li>
+                <div class="place-name" id="place-name"></div>
+              </li>
+              <li>
+                <span
+                  class="current-temperature"
+                  id="current-temperature"
+                ></span>
+                <span class="units"
+                  ><a href="#" id="celsius-link" class="active"> °C </a> |
+                  <a href="#" id="fahrenheit-link">°F </a></span
+                >
+              </li>
+              <li>
+                <div class="current-description" id="current-description"></div>
+              </li>
+            </ul>
           </div>
-          <div class="clearfix current-weather-info">
-            <img
-              src=""
-              alt=" "
-              class="description-icon"
-              id="description-icon"
-            />
+          <div class="search-form-container">
+            <form class="row search-form" id="search-form">
+              <div class="col-auto">
+                <input
+                  type="search"
+                  autofocus="on"
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Search</button>
+              </div>
+
+              <div class="col-auto">
+                <button
+                  type="button"
+                  class="btn btn-info user-location-button"
+                  id="user-location-button"
+                >
+                  📍
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="popover-container">
             <button>
               Air Quality:
               <span class="current-air-quality" id="current-air-quality"></span>
@@ -73,31 +105,6 @@
               ></span>
             </button>
           </div>
-          <form class="row search-form" id="search-form">
-            <div class="col-auto">
-              <input
-                type="search"
-                autofocus="on"
-                class="form-control"
-                id="city-input"
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="col-auto">
-              <button type="submit" class="btn btn-primary">Search</button>
-            </div>
-
-            <div class="col-auto">
-              <button
-                type="button"
-                class="btn btn-info user-location-button"
-                id="user-location-button"
-              >
-                📍
-              </button>
-            </div>
-          </form>
 
           <div class="priority-container">
             <select
@@ -111,16 +118,16 @@
             </select>
           </div>
         </div>
-        <small>
-          <a
-            href="https://github.com/Codeoutdoors/my-weather-app"
-            target="_blank"
-            class="footer"
-          >
-            Open-source code</a
-          >, by Suzy Stevenson
-        </small>
       </div>
+      <small>
+        <a
+          href="https://github.com/Codeoutdoors/my-weather-app"
+          target="_blank"
+          class="footer"
+        >
+          Open-source code</a
+        >, by Suzy Stevenson
+      </small>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
