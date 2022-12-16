@@ -18,7 +18,7 @@
   <body>
     <div class="container">
       <div class="app-wrapper">
-        <div class="my-weather-app border">
+        <div class="border app-border">
           <div class="searched-summary-container">
             <div class="clearfix description-icon">
               <img src="" alt=" " id="description-icon" />
@@ -73,49 +73,127 @@
           </div>
 
           <div class="popover-container">
-            <button>
-              Air Quality:
-              <span class="current-air-quality" id="current-air-quality"></span>
-            </button>
-            <button>
-              Visibility:
-              <span class="current-visibility" id="current-visibility"></span>km
-            </button>
-            <button>
-              Humidity:
-              <span class="current-humidity" id="current-humidity"></span>%
-            </button>
-            <button>
-              <span class="sunrise-time-today" id="sunrise-time-today"></span>
+            <div class="row">
+              <div class="col-sm">
+                <a
+                  tabindex="0"
+                  type="button"
+                  class="btn btn-secondary"
+                  data-toggle="popover"
+                  data-placement="bottom"
+                  data-toggle="popover"
+                  data-trigger="focus"
+                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum
+              faucibus."
+                >
+                  Air Quality:
+                  <span
+                    class="current-air-quality"
+                    id="current-air-quality"
+                  ></span>
+                </a>
+              </div>
+              <div class="col-sm">
+                <a
+                  tabindex="0"
+                  type="button"
+                  class="btn btn-secondary"
+                  data-container="body"
+                  data-toggle="popover"
+                  data-placement="bottom"
+                  data-toggle="popover"
+                  data-trigger="focus"
+                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum
+              faucibus."
+                >
+                  Visibility:
+                  <span
+                    class="current-visibility"
+                    id="current-visibility"
+                  ></span
+                  >km
+                </a>
+              </div>
+              <div class="col-sm">
+                <a
+                  tabindex="0"
+                  type="button"
+                  class="btn btn-secondary"
+                  data-container="body"
+                  data-toggle="popover"
+                  data-placement="bottom"
+                  data-toggle="popover"
+                  data-trigger="focus"
+                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum
+              faucibus."
+                >
+                  Humidity:
+                  <span class="current-humidity" id="current-humidity"></span>%
+                </a>
+              </div>
+              <div class="col-sm">
+                <a
+                  tabindex="0"
+                  type="button"
+                  class="btn btn-secondary"
+                  data-container="body"
+                  data-toggle="popover"
+                  data-placement="bottom"
+                  data-toggle="popover"
+                  data-trigger="focus"
+                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum
+              faucibus."
+                >
+                  <span
+                    class="sunrise-time-today"
+                    id="sunrise-time-today"
+                  ></span>
 
-              Sunset:
-              <span class="sunset-time-today" id="sunset-time-today"></span>
-            </button>
-            <button>
-              Wind:
-              <span class="current-wind-speed" id="current-wind-speed"></span>
-              km/h
+                  Sunset:
+                  <span class="sunset-time-today" id="sunset-time-today"></span>
+                </a>
+              </div>
+              <div class="col-sm">
+                <a
+                  type="button"
+                  class="btn btn-secondary"
+                  data-container="body"
+                  data-toggle="popover"
+                  data-placement="bottom"
+                  data-toggle="popover"
+                  data-trigger="focus"
+                  data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus."
+                >
+                  Wind:
+                  <span
+                    class="current-wind-speed"
+                    id="current-wind-speed"
+                  ></span>
+                  km/h
 
-              <br />
+                  <br />
 
-              Direction:
-              <span
-                class="current-wind-direction"
-                id="current-wind-direction"
-              ></span>
-            </button>
-          </div>
+                  Direction:
+                  <span
+                    class="current-wind-direction"
+                    id="current-wind-direction"
+                  ></span>
+                </a>
+              </div>
+            </div>
 
-          <div class="priority-container">
-            <select
-              class="form-select priority-bar"
-              aria-label="Default select example"
-            >
-              <option selected>What are you looking for?</option>
-              <option value="1">High temperatures!</option>
-              <option value="2">Snow</option>
-              <option value="3">Low wind</option>
-            </select>
+            <div class="priority-container">
+              <select
+                class="form-select priority-bar"
+                aria-label="Default select example"
+              >
+                <option selected>What are you looking for?</option>
+                <option value="1">High temperatures!</option>
+                <option value="2">Snow</option>
+                <option value="3">Low wind</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>

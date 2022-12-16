@@ -6,11 +6,14 @@ small {
 }
 .container {
   margin-top: 50px;
+  max-width: 900px;
 }
 
 .app-wrapper {
-  max-width: 900px;
   margin: auto;
+}
+.app-border {
+  padding: 15px;
 }
 .my-weather-app {
   color: #5a4257;
@@ -43,8 +46,6 @@ small {
 
 .popover-container {
   padding-top: 180px;
-
-  align-items: center;
 }
 .description-icon {
   float: left;
@@ -76,4 +77,8 @@ small {
 }
 .current-description {
   text-transform: capitalize;
+}
+
+.btn-secondary {
+  height: 86px;
 }
