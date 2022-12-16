@@ -82,7 +82,7 @@ function displayWeatherInformation(response) {
 
   let timeElement = document.querySelector("#current-time");
 
-  timeElement.innerHTML = ` ${hour}:${minute} on ${day}`;
+  timeElement.innerHTML = `${day} ${hour}:${minute} `;
 
   let sunriseTimeToday = document.querySelector("#sunrise-time-today");
   let sunriseUnix = response.data.sys.sunrise * 1000;
@@ -171,6 +171,7 @@ function displayCelsiusTemperature(event) {
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
+
 let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
