@@ -14,11 +14,12 @@ small {
 }
 .app-border {
   padding: 15px;
+  background-image: url("images/lake.jpg");
+  background-repeat: no-repeat;
 }
 .my-weather-app {
   color: #5a4257;
   padding: 10px;
-  background-image: url("");
 }
 .searched-summary-container {
   float: left;
@@ -46,6 +47,24 @@ small {
 
 .popover-container {
   padding-top: 180px;
+}
+.banner {
+  background: #5a4257;
+  border: #5a4257;
+  opacity: 0.85;
+  border-radius: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.btn:hover {
+  background: #f7f2f2;
+  color: #5a4257;
+}
+.btn {
+  color: #f7f2f2;
+  background: #5a4257;
+  opacity: 0.85;
+  border: #5a4257;
 }
 .description-icon {
   float: left;

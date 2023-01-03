@@ -13,6 +13,14 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/950d668718.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" type="text/css" href="src/style.css" />
   </head>
   <body>
@@ -65,15 +73,16 @@
                   type="button"
                   class="btn btn-info user-location-button"
                   id="user-location-button"
+                  class="material-symbols-outlined"
                 >
-                  📍
+                  <i class="fas fa-map-marker-alt"></i>
                 </button>
               </div>
             </form>
           </div>
 
           <div class="popover-container">
-            <div class="row">
+            <div class="row banner">
               <div class="col-sm">
                 <a
                   tabindex="0"
@@ -182,18 +191,17 @@ sagittis lacus vel augue laoreet rutrum faucibus."
                 </a>
               </div>
             </div>
-
-            <div class="priority-container">
-              <select
-                class="form-select priority-bar"
-                aria-label="Default select example"
-              >
-                <option selected>What are you looking for?</option>
-                <option value="1">High temperatures!</option>
-                <option value="2">Snow</option>
-                <option value="3">Low wind</option>
-              </select>
-            </div>
+          </div>
+          <div class="priority-container">
+            <select
+              class="form-select priority-bar"
+              aria-label="Default select example"
+            >
+              <option selected>What are you looking for?</option>
+              <option value="1">High temperatures!</option>
+              <option value="2">Snow</option>
+              <option value="3">Low wind</option>
+            </select>
           </div>
         </div>
       </div>
