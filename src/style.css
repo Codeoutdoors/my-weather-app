@@ -1,28 +1,31 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #1b666c;
 }
 small {
   text-align: left;
 }
-.container {
-  margin-top: 50px;
-  max-width: 900px;
-}
 
 .app-wrapper {
   margin: auto;
+  margin-top: 50px;
+  max-width: 900px;
 }
 .app-border {
   padding: 15px;
-  background-image: url("images/lake.jpg");
+  background-image: url("images/6452058.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .my-weather-app {
-  color: #5a4257;
+  color: #ce656c;
   padding: 10px;
 }
 .searched-summary-container {
   float: left;
+  font-size: 16px;
+  font-weight: 550;
+  color: #1b666c;
   width: 250px;
   text-align: center;
 }
@@ -30,10 +33,6 @@ small {
   list-style: none;
 }
 
-.place-name {
-  font-weight: 600;
-  text-decoration: underline wavy;
-}
 .search-form-container {
   padding: 20px;
   float: right;
@@ -44,28 +43,44 @@ small {
   margin: 0px;
   max-width: 450px;
 }
-
+.form-control {
+  background: #ede8e6;
+  border: #ce656c;
+}
+.form-control:focus {
+  color: #1b666c;
+  background-color: #e4e5e3;
+  border-color: #1b666c;
+  box-shadow: 0 0 0 0.25rem rgb(25 112 122 / 25%);
+}
 .popover-container {
-  padding-top: 180px;
+  padding-top: 150px;
 }
-.banner {
-  background: #5a4257;
-  border: #5a4257;
-  opacity: 0.85;
-  border-radius: 12px;
-  margin-left: 10px;
-  margin-right: 10px;
+.icon {
+  font-size: 40px;
 }
-.btn:hover {
-  background: #f7f2f2;
-  color: #5a4257;
+
+.search-button:hover {
+  background: #e4e5e3;
+  color: #1b666c;
 }
-.btn {
-  color: #f7f2f2;
-  background: #5a4257;
-  opacity: 0.85;
-  border: #5a4257;
+.search-button {
+  color: #e4e5e3;
+  background: #1b666c;
+  opacity: 0.9;
+  border: #1b666c;
 }
+.btn-secondary {
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 550;
+  color: #1b666c;
+}
+.btn-secondary:hover {
+  background: none;
+}
+
 .description-icon {
   float: left;
 }
@@ -79,7 +94,6 @@ small {
 .priority-bar {
   max-width: 230px;
   font-size: small;
-
   margin: auto;
 }
 
@@ -87,7 +101,7 @@ small {
   font-weight: 800;
 }
 .units .active {
-  color: #5a4257;
+  color: #1b666c;
   cursor: text;
   text-decoration: none;
 }
@@ -96,8 +110,4 @@ small {
 }
 .current-description {
   text-transform: capitalize;
-}
-
-.btn-secondary {
-  height: 86px;
 }

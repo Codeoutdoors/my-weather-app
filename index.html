@@ -38,16 +38,7 @@
               <li>
                 <div class="place-name" id="place-name"></div>
               </li>
-              <li>
-                <span
-                  class="current-temperature"
-                  id="current-temperature"
-                ></span>
-                <span class="units"
-                  ><a href="#" id="celsius-link" class="active"> °C </a> |
-                  <a href="#" id="fahrenheit-link">°F </a></span
-                >
-              </li>
+
               <li>
                 <div class="current-description" id="current-description"></div>
               </li>
@@ -65,13 +56,15 @@
                 />
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary search-button">
+                  Search
+                </button>
               </div>
 
               <div class="col-auto">
                 <button
                   type="button"
-                  class="btn btn-info user-location-button"
+                  class="btn search-button"
                   id="user-location-button"
                   class="material-symbols-outlined"
                 >
@@ -82,7 +75,7 @@
           </div>
 
           <div class="popover-container">
-            <div class="row banner">
+            <div class="row popovers">
               <div class="col-sm">
                 <a
                   tabindex="0"
@@ -95,6 +88,8 @@
                   data-content="Vivamus sagittis lacus vel augue laoreet rutrum
               faucibus."
                 >
+                  <span class="material-symbols-outlined icon"> eco </span>
+                  <br />
                   Air Quality:
                   <span
                     class="current-air-quality"
@@ -115,6 +110,10 @@
                   data-content="Vivamus sagittis lacus vel augue laoreet rutrum
               faucibus."
                 >
+                  <span class="material-symbols-outlined icon">
+                    visibility
+                  </span>
+                  <br />
                   Visibility:
                   <span
                     class="current-visibility"
@@ -136,6 +135,10 @@
                   data-content="Vivamus sagittis lacus vel augue laoreet rutrum
               faucibus."
                 >
+                  <span class="material-symbols-outlined icon">
+                    humidity_percentage
+                  </span>
+                  <br />
                   Humidity:
                   <span class="current-humidity" id="current-humidity"></span>%
                 </a>
@@ -153,6 +156,8 @@
                   data-content="Vivamus sagittis lacus vel augue laoreet rutrum
               faucibus."
                 >
+                  <span class="material-symbols-outlined icon"> routine </span>
+                  <br />
                   <span
                     class="sunrise-time-today"
                     id="sunrise-time-today"
@@ -174,8 +179,9 @@
                   data-content="Vivamus
 sagittis lacus vel augue laoreet rutrum faucibus."
                 >
-                  Wind:
-                  <span
+                  <span class="material-symbols-outlined icon"> air </span>
+                  <br />
+                  Speed:<span
                     class="current-wind-speed"
                     id="current-wind-speed"
                   ></span>
@@ -189,6 +195,33 @@ sagittis lacus vel augue laoreet rutrum faucibus."
                     id="current-wind-direction"
                   ></span>
                 </a>
+              </div>
+              <div class="col-sm">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-container="body"
+                  data-toggle="popover"
+                  data-placement="bottom"
+                  data-toggle="popover"
+                  data-trigger="focus"
+                  data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus."
+                >
+                  <span class="material-symbols-outlined icon">
+                    device_thermostat
+                  </span>
+                  <br />
+                  Temperature:
+                  <span
+                    class="current-temperature"
+                    id="current-temperature"
+                  ></span>
+                  <span class="units"
+                    ><a href="#" id="celsius-link" class="active"> °C </a> |
+                    <a href="#" id="fahrenheit-link">°F </a></span
+                  >
+                </button>
               </div>
             </div>
           </div>
