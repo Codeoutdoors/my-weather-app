@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suzy's Weather App</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   
+
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script
       src="https://kit.fontawesome.com/950d668718.js"
@@ -24,27 +21,23 @@
     <link rel="stylesheet" type="text/css" href="src/style.css" />
   </head>
   <body>
-    <div class="container">
+
       <div class="app-wrapper">
         <div class="border app-border">
-          <div class="searched-summary-container">
+          <div class=" searched-summary">
             <div class="clearfix description-icon">
               <img src="" alt=" " id="description-icon" />
             </div>
-            <ul class="summary-list">
-              <li>
-                <div class="current-time" id="current-time"></div>
-              </li>
-              <li>
-                <div class="place-name" id="place-name"></div>
-              </li>
-
-              <li>
+            <span class="current-summary">
+             
+     
+                  <div class="place-name" id="place-name"></div>
+              <div class="current-time" id="current-time"></div>
                 <div class="current-description" id="current-description"></div>
-              </li>
-            </ul>
+              
+            </span>
           </div>
-          <div class="search-form-container">
+          <div class="searched-form">
             <form class="row search-form" id="search-form">
               <div class="col-auto">
                 <input
@@ -74,140 +67,15 @@
             </form>
           </div>
 
-          <div class="popover-container">
-            <div class="row popovers">
-              <div class="col-sm">
-                <a
-                  tabindex="0"
-                  type="button"
-                  class="btn btn-secondary"
-                  data-toggle="popover"
-                  data-placement="bottom"
-                  data-toggle="popover"
-                  data-trigger="focus"
-                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum
-              faucibus."
-                >
-                  <span class="material-symbols-outlined icon"> eco </span>
-                  <br />
-                  Air Quality:
-                  <span
-                    class="current-air-quality"
-                    id="current-air-quality"
-                  ></span>
-                </a>
-              </div>
-              <div class="col-sm">
-                <a
-                  tabindex="0"
-                  type="button"
-                  class="btn btn-secondary"
-                  data-container="body"
-                  data-toggle="popover"
-                  data-placement="bottom"
-                  data-toggle="popover"
-                  data-trigger="focus"
-                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum
-              faucibus."
-                >
-                  <span class="material-symbols-outlined icon">
-                    visibility
-                  </span>
-                  <br />
-                  Visibility:
-                  <span
-                    class="current-visibility"
-                    id="current-visibility"
-                  ></span
-                  >km
-                </a>
-              </div>
-              <div class="col-sm">
-                <a
-                  tabindex="0"
-                  type="button"
-                  class="btn btn-secondary"
-                  data-container="body"
-                  data-toggle="popover"
-                  data-placement="bottom"
-                  data-toggle="popover"
-                  data-trigger="focus"
-                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum
-              faucibus."
-                >
-                  <span class="material-symbols-outlined icon">
-                    humidity_percentage
-                  </span>
-                  <br />
-                  Humidity:
-                  <span class="current-humidity" id="current-humidity"></span>%
-                </a>
-              </div>
-              <div class="col-sm">
-                <a
-                  tabindex="0"
-                  type="button"
-                  class="btn btn-secondary"
-                  data-container="body"
-                  data-toggle="popover"
-                  data-placement="bottom"
-                  data-toggle="popover"
-                  data-trigger="focus"
-                  data-content="Vivamus sagittis lacus vel augue laoreet rutrum
-              faucibus."
-                >
-                  <span class="material-symbols-outlined icon"> routine </span>
-                  <br />
-                  <span
-                    class="sunrise-time-today"
-                    id="sunrise-time-today"
-                  ></span>
-
-                  Sunset:
-                  <span class="sunset-time-today" id="sunset-time-today"></span>
-                </a>
-              </div>
-              <div class="col-sm">
-                <a
-                  type="button"
-                  class="btn btn-secondary"
-                  data-container="body"
-                  data-toggle="popover"
-                  data-placement="bottom"
-                  data-toggle="popover"
-                  data-trigger="focus"
-                  data-content="Vivamus
-sagittis lacus vel augue laoreet rutrum faucibus."
-                >
-                  <span class="material-symbols-outlined icon"> air </span>
-                  <br />
-                  Speed:<span
-                    class="current-wind-speed"
-                    id="current-wind-speed"
-                  ></span>
-                  km/h
-
-                  <br />
-
-                  Direction:
-                  <span
-                    class="current-wind-direction"
-                    id="current-wind-direction"
-                  ></span>
-                </a>
-              </div>
-              <div class="col-sm">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-container="body"
-                  data-toggle="popover"
-                  data-placement="bottom"
-                  data-toggle="popover"
-                  data-trigger="focus"
-                  data-content="Vivamus
-sagittis lacus vel augue laoreet rutrum faucibus."
-                >
+          <div class="container card-container">
+            <div class="row cards">
+              
+              
+              <div class="col-2 card btn btn-secondary"
+              type="button">
+              <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">
                   <span class="material-symbols-outlined icon">
                     device_thermostat
                   </span>
@@ -220,12 +88,124 @@ sagittis lacus vel augue laoreet rutrum faucibus."
                   <span class="units"
                     ><a href="#" id="celsius-link" class="active"> °C </a> |
                     <a href="#" id="fahrenheit-link">°F </a></span
-                  >
-                </button>
+                  ></p>
               </div>
-            </div>
+        
+          </button>
+
+
+
+
+        </div>
+        <div class="col-2 card btn btn-secondary"
+                  type="button">
+                  <img src="" class="card-img-top" alt="">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <span class="material-symbols-outlined icon"> air </span>
+                      <br />
+                      Speed:<span
+                        class="current-wind-speed"
+                        id="current-wind-speed"
+                      ></span>
+                      km/h
+    
+                      <br />
+    
+                      Direction:
+                      <span
+                        class="current-wind-direction"
+                        id="current-wind-direction"
+                      ></span></p>
+                  </div>
+                  </div>
+
+                  <div class="col-2 card btn btn-secondary"
+                  class=""
+                    type="button">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <p class="card-text">
+                        <span class="material-symbols-outlined icon">
+                          humidity_percentage
+                        </span>
+                        <br />
+                        Humidity:
+                        <span class="current-humidity" id="current-humidity"></span>%</p>
+                    </div>
+             
+                </div>
+              <div class="col-2 card btn btn-secondary"
+                type="button">
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                  <p class="card-text"> <span class="material-symbols-outlined icon"> eco </span>
+                    <br />
+                    Air Quality:
+                    <span
+                      class="current-air-quality"
+                      id="current-air-quality"
+                    ></span></p>
+                </div>
+          
+       
+              </div>
+
+
+              <div class="col-2 card btn btn-secondary"
+                  type="button">
+                  <img src="" class="card-img-top" alt="">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <span class="material-symbols-outlined icon">
+                        visibility
+                      </span>
+                      <br />
+                      Visibility:
+                      <span
+                        class="current-visibility"
+                        id="current-visibility"
+                      ></span
+                      >km</p>
+                  </div>
+                
+              </div>
+
+
+             
+         
+              <div class="col-2 card btn btn-secondary"
+                  type="button">
+                  <img src="" class="card-img-top" alt="">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <span class="material-symbols-outlined icon"> routine </span>
+                      <br />
+                      <span
+                        class="sunrise-time-today"
+                        id="sunrise-time-today"
+                      ></span>
+    
+                      Sunset:
+                      <span class="sunset-time-today" id="sunset-time-today"></span>
+    </p>
+                  </div>       
+              </div>
+
+
+
+          
+
+
+            
           </div>
-          <div class="priority-container">
+        </div>
+
+        <div class="weather-forecast"  id="forecast">
+        
+        </div>
+
+          <div class="container priority-container">
             <select
               class="form-select priority-bar"
               aria-label="Default select example"
@@ -236,7 +216,7 @@ sagittis lacus vel augue laoreet rutrum faucibus."
               <option value="3">Low wind</option>
             </select>
           </div>
-        </div>
+    
       </div>
       <small>
         <a
@@ -247,13 +227,9 @@ sagittis lacus vel augue laoreet rutrum faucibus."
           Open-source code</a
         >, by Suzy Stevenson
       </small>
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-
+    
+  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="src/script.js"></script>
   </body>
 </html>
