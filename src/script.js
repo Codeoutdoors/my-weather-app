@@ -36,9 +36,16 @@ function degToCompass(degrees) {
   document.querySelector("#current-wind-direction").innerHTML =
     direction[value % 16];
 }
-
+const popoverTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="popover"]'
+);
+const popoverList = [...popoverTriggerList].map(
+  (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+);
 function displayWeatherInformation(response) {
-  document.querySelector("#place-name").innerHTML = response.data.name;
+  document.querySelector(
+    "#place-name"
+  ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   celsiusTemperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = celsiusTemperature;
@@ -76,13 +83,29 @@ function displayWeatherInformation(response) {
     "Friday",
     "Saturday",
   ];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let date = time.getDate();
   let day = days[time.getDay()];
   let minute = ("0" + time.getMinutes()).slice(-2);
   let hour = ("0" + time.getHours()).slice(-2);
-
+  let month = months[time.getMonth()];
   let timeElement = document.querySelector("#current-time");
 
-  timeElement.innerHTML = `${day} ${hour}:${minute} `;
+  timeElement.innerHTML = `${day} ${date} ${month} ${hour}:${minute} `;
 
   let sunriseTimeToday = document.querySelector("#sunrise-time-today");
   let sunriseUnix = response.data.sys.sunrise * 1000;
@@ -172,6 +195,33 @@ function displayCelsiusTemperature(event) {
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+<div class="col-2">
+  <div class="weather-forecast-date">Sat</div>
+  <img
+    src="http://openweathermap.org/img/wn/50d@2x.png"
+    alt=""
+    width="42"
+  />
+  <div class="weather-forecast-temperatures">
+    <span class="weather-forecast-temperature-max"> 18° </span>
+    <span class="weather-forecast-temperature-min"> 12° </span>
+  </div>
+</div>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -187,3 +237,4 @@ let userLocationButton = document.querySelector("#user-location-button");
 userLocationButton.addEventListener("click", handleClick);
 
 defineCity("Banff");
+displayForecast();
