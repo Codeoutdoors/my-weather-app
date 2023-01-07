@@ -7,21 +7,23 @@ small {
 }
 
 .app-wrapper {
-  margin: auto;
   margin-top: 50px;
-  max-width: 900px;
 }
 .app-border {
   padding: 15px;
-  background-image: url("images/6452058.jpg");
+  background-color: rgb(162, 209, 202);
+  background-image: url("");
   background-size: cover;
   background-repeat: no-repeat;
+  margin: auto;
+  width: 800px;
+  height: 600px;
 }
 .my-weather-app {
   color: #ce656c;
   padding: 10px;
 }
-.searched-summary-container {
+.searched-summary {
   float: left;
   font-size: 16px;
   font-weight: 550;
@@ -29,11 +31,11 @@ small {
   width: 250px;
   text-align: center;
 }
-.summary-list {
+.current-summary {
   list-style: none;
 }
 
-.search-form-container {
+.searched-form {
   padding: 20px;
   float: right;
   max-width: 500px;
@@ -53,8 +55,10 @@ small {
   border-color: #1b666c;
   box-shadow: 0 0 0 0.25rem rgb(25 112 122 / 25%);
 }
-.popover-container {
-  padding-top: 150px;
+.card-container {
+  padding-top: 120px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .icon {
   font-size: 40px;
