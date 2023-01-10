@@ -46,9 +46,16 @@ function displayWeatherInformation(response) {
   document.querySelector(
     "#place-name"
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
-  celsiusTemperature = Math.round(response.data.main.temp);
+
   let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = celsiusTemperature;
+  currentTemperature.innerHTML = `Temp: ${Math.round(
+    response.data.main.temp
+  )}°C`;
+
+  let currentTemperatureFeels = document.querySelector("#temperature-feels");
+  currentTemperatureFeels.innerHTML = `Feels like: ${Math.round(
+    response.data.main.feels_like
+  )}°C `;
 
   let iconElement = document.querySelector("#description-icon");
 
@@ -84,28 +91,12 @@ function displayWeatherInformation(response) {
     "Saturday",
   ];
 
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  let date = time.getDate();
   let day = days[time.getDay()];
   let minute = ("0" + time.getMinutes()).slice(-2);
   let hour = ("0" + time.getHours()).slice(-2);
-  let month = months[time.getMonth()];
-  let timeElement = document.querySelector("#current-time");
 
-  timeElement.innerHTML = `${day} ${date} ${month} ${hour}:${minute} `;
+  let timeElement = document.querySelector("#time");
+  timeElement.innerHTML = `${day}  ${hour}:${minute} `;
 
   let sunriseTimeToday = document.querySelector("#sunrise-time-today");
   let sunriseUnix = response.data.sys.sunrise * 1000;
@@ -132,6 +123,7 @@ function displayWeatherInformation(response) {
   let degrees = response.data.wind.deg;
 
   degToCompass(degrees);
+  getForecast(response.data.coord);
 }
 
 function defineCity(city) {
@@ -140,6 +132,7 @@ function defineCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(defineLocationAqi);
   axios.get(apiUrl).then(displayWeatherInformation);
+  console.log(apiUrl);
 }
 
 function defineLocationAqi(response) {
@@ -178,11 +171,7 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
 }
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = Math.round(celsiusTemperature);
-}
+
 function getForecast(coordinates) {
   let apiKey = "2a2eaa51d996796495bf456e5b58adf4";
   let units = "metric";
@@ -193,9 +182,33 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
+  document.querySelector("#current-uvi").innerHTML = Math.round(
+    response.data.current.uvi
+  );
+
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
+    let degrees = forecastDay.wind_deg;
+    let value = Math.floor(degrees / 22.5 + 0.5);
+    let direction = [
+      "N",
+      "NNE",
+      "NE",
+      "ENE",
+      "E",
+      "ESE",
+      "SE",
+      "SSE",
+      "S",
+      "SSW",
+      "SW",
+      "WSW",
+      "W",
+      "WNW",
+      "NW",
+      "NNW",
+    ];
     if (index < 6) {
       forecastHTML =
         forecastHTML +
@@ -215,6 +228,29 @@ function displayForecast(response) {
       forecastDay.temp.min
     )}° </span>
   </div>
+
+
+  
+  <div class="weather-forecast-wind">
+  <span class="weather-forecast-wind-speed"> ${Math.round(
+    forecastDay.wind_speed * 3.6
+  )} km/h        
+  </span>
+  <span class="weather-forecast-wind-gust"> ${Math.round(
+    forecastDay.wind_gust * 3.6
+  )} km/h        
+  </span>
+  <span class="weather-forecast-wind-direction"> ${
+    direction[value % 16]
+  } </span>
+
+
+</div>
+
+<div class="weather-forecast-uvi"> UVI: ${Math.round(forecastDay.uvi)}
+
+</div>
+
 </div>
 `;
     }

@@ -26,64 +26,73 @@
   </head>
   <body>
     <div class="app-wrapper">
-      <div class="border app-border">
-        <div class="searched-summary">
-          <div class="clearfix description-icon">
-            <img src="" alt=" " id="description-icon" />
-          </div>
-          <span class="current-summary">
+      <div class="app-border">
+        <div class="row">
+          <span class="col-3 current-summary">
+            <span class="time" id="time"></span>
             <div class="place-name" id="place-name"></div>
-            <div class="current-time" id="current-time"></div>
+            <span class="temperature" id="temperature"></span>
+            <div class="temperature-feels" id="temperature-feels"></div>
             <div class="current-description" id="current-description"></div>
           </span>
-        </div>
-        <div class="searched-form">
-          <form class="row search-form" id="search-form">
-            <div class="col-auto">
-              <input
-                type="search"
-                autofocus="on"
-                class="form-control"
-                id="city-input"
-                autocomplete="off"
-              />
-            </div>
-            <div class="col-auto">
-              <button type="submit" class="btn btn-primary search-button">
-                Search
-              </button>
-            </div>
 
-            <div class="col-auto">
-              <button
-                type="button"
-                class="btn search-button"
-                id="user-location-button"
-                class="material-symbols-outlined"
-              >
-                <i class="fas fa-map-marker-alt"></i>
-              </button>
-            </div>
-          </form>
-        </div>
+          <span class="col-2">
+            <span class="icon">
+              <div class="clearfix description-icon">
+                <img src="" alt=" " id="description-icon" />
+              </div>
+            </span>
+          </span>
 
+          <div class="col-7 searched-form">
+            <form class="row search-form" id="search-form">
+              <div class="col-auto">
+                <input
+                  type="search"
+                  autofocus="on"
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary search-button">
+                  Search
+                </button>
+              </div>
+
+              <div class="col-auto">
+                <button
+                  type="button"
+                  class="btn search-button"
+                  id="user-location-button"
+                  class="material-symbols-outlined"
+                >
+                  <i class="fas fa-map-marker-alt"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <div class="container card-container">
           <div class="row cards">
-            <div class="col-2 card btn btn-secondary" type="button">
+            <div class="col card btn btn-secondary" type="button">
               <img src="" class="card-img-top" alt="" />
               <div class="card-body">
                 <p class="card-text">
-                  <span class="material-symbols-outlined icon">
-                    device_thermostat
-                  </span>
                   <br />
-                  Temperature:
-                  <span class="current-temperature" id="temperature"></span>
-                  <span class="units"> °C </span>
                 </p>
               </div>
             </div>
-            <div class="col-2 card btn btn-secondary" type="button">
+            <div class="col card btn btn-secondary" type="button">
               <img src="" class="card-img-top" alt="" />
               <div class="card-body">
                 <p class="card-text">
@@ -106,7 +115,7 @@
               </div>
             </div>
 
-            <div class="col-2 card btn btn-secondary" class="" type="button">
+            <div class="col card btn btn-secondary" class="" type="button">
               <img src="" class="card-img-top" alt="" />
               <div class="card-body">
                 <p class="card-text">
@@ -119,7 +128,7 @@
                 </p>
               </div>
             </div>
-            <div class="col-2 card btn btn-secondary" type="button">
+            <div class="col card btn btn-secondary" type="button">
               <img src="" class="card-img-top" alt="" />
               <div class="card-body">
                 <p class="card-text">
@@ -134,7 +143,19 @@
               </div>
             </div>
 
-            <div class="col-2 card btn btn-secondary" type="button">
+            <div class="col card btn btn-secondary" type="button">
+              <img class="card-img-top" alt="" />
+              <div class="card-body">
+                <p class="card-text">
+                  <span class="material-symbols-outlined icon"> UVI </span>
+                  <br />
+                  UVI:
+                  <span class="current-uvi" id="current-uvi"></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="col card btn btn-secondary" type="button">
               <img src="" class="card-img-top" alt="" />
               <div class="card-body">
                 <p class="card-text">
@@ -152,12 +173,17 @@
               </div>
             </div>
 
-            <div class="col-2 card btn btn-secondary" type="button">
-              <img src="" class="card-img-top" alt="" />
+            <div class="col card btn btn-secondary" type="button">
+              <img
+                src="src/images/sun.png"
+                alt="Learning About The Moon And The Sun - Day And Night Icon @clipartmax.com"
+                class="card-img-top"
+              />
               <div class="card-body">
                 <p class="card-text">
                   <span class="material-symbols-outlined icon"> routine </span>
                   <br />
+                  Sunrise:
                   <span
                     class="sunrise-time-today"
                     id="sunrise-time-today"
