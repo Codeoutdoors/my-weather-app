@@ -7,7 +7,7 @@ small {
 }
 
 .app-wrapper {
-  margin-top: 50px;
+  margin-top: 150px;
 }
 .app-border {
   padding: 15px;
@@ -88,9 +88,8 @@ small {
 .description-icon {
   float: left;
 }
-.priority-container {
-  height: 200px;
-  margin-top: 50px;
+.footer {
+  margin-left: 125px;
 }
 .col-auto {
   padding-left: 0px;

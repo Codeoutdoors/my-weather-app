@@ -47,7 +47,7 @@ function displayWeatherInformation(response) {
     "#place-name"
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   celsiusTemperature = Math.round(response.data.main.temp);
-  let currentTemperature = document.querySelector("#current-temperature");
+  let currentTemperature = document.querySelector("#temperature");
   currentTemperature.innerHTML = celsiusTemperature;
 
   let iconElement = document.querySelector("#description-icon");
@@ -132,7 +132,6 @@ function displayWeatherInformation(response) {
   let degrees = response.data.wind.deg;
 
   degToCompass(degrees);
-  getForecast(response.data.coord);
 }
 
 function defineCity(city) {
@@ -159,17 +158,10 @@ function defineMyLocation(response) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeatherInformation);
 }
-function getCoords(response) {
-  let apiKey = "4b3503b2f08a729413c4d33ef1186004";
-  let lat = response.coords.latitude;
-  let lon = response.coords.longitude;
-  let apiUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-  axios.get(apiUrl).then(displayAqi);
-}
 
 function handleClick(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(getCoords);
+  navigator.geolocation.getCurrentPosition(defineLocationAqi);
   navigator.geolocation.getCurrentPosition(defineMyLocation);
 }
 
@@ -188,7 +180,7 @@ function formatDay(timestamp) {
 }
 function displayCelsiusTemperature(event) {
   event.preventDefault();
-  let currentTemperature = document.querySelector("#current-temperature");
+  let currentTemperature = document.querySelector("#temperature");
   currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
 function getForecast(coordinates) {
@@ -236,5 +228,8 @@ searchForm.addEventListener("submit", handleSubmit);
 
 let userLocationButton = document.querySelector("#user-location-button");
 userLocationButton.addEventListener("click", handleClick);
+
+let temperatureForecast = document.querySelector("#temperature");
+temperatureForecast.addEventListener("click", getForecast);
 
 defineCity("Banff");
