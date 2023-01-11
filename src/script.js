@@ -57,14 +57,45 @@ function displayWeatherInformation(response) {
     response.data.main.feels_like
   )}°C `;
 
+  let allIcons = [
+    "clear sky",
+    "clouds",
+    "few clouds",
+    "haze",
+    "heavy snow",
+    "mist",
+    "rain",
+    "shower rain",
+    "snow",
+    "thunderstorm",
+    "drizzle",
+  ];
+
   let iconElement = document.querySelector("#description-icon");
+  let iconID = response.data.weather[0].id;
+  let mainWeather = response.data.weather[0].main.toLowerCase();
+  let descriptionWeather = response.data.weather[0].description.toLowerCase();
 
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
-
+  for (let i = 0; i < allIcons.length; i++) {
+    if (descriptionWeather.localeCompare(allIcons[i]) === 0) {
+      iconElement.src = `src/images/${allIcons[i]}.gif`;
+    } else if (mainWeather.localeCompare(allIcons[i]) === 0) {
+      iconElement.src = `src/images/${allIcons[i]}.gif`;
+    } else if (
+      iconID === 701 ||
+      iconID === 711 ||
+      iconID === 721 ||
+      iconID === 731 ||
+      iconID === 741 ||
+      iconID === 751 ||
+      iconID === 761 ||
+      iconID === 762 ||
+      iconID === 771 ||
+      iconID === 781
+    ) {
+      iconElement.src = `src/images/mist.gif`;
+    }
+  }
   document.querySelector("#current-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#current-visibility").innerHTML = Math.round(
