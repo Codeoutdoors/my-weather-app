@@ -172,6 +172,7 @@ function defineLocationAqi(response) {
   let lon = response.data.coord.lon;
   let apiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayAqi);
+  console.log(apiUrl);
 }
 
 function defineMyLocation(response) {
@@ -208,6 +209,7 @@ function getForecast(coordinates) {
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
+  console.log(apiUrl);
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -281,6 +283,12 @@ function displayForecast(response) {
 <div class="weather-forecast-uvi"> UVI: ${Math.round(forecastDay.uvi)}
 
 </div>
+</div>
+
+<div class="weather-forecast-pop"> POP: ${Math.round(forecastDay.pop * 100)}%
+
+</div>
+
 
 </div>
 `;
