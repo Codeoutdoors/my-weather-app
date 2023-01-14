@@ -27,22 +27,18 @@
   <body>
     <div class="app-wrapper">
       <div class="app-border">
-        <div class="row">
-          <span class="col-3 current-summary">
-            <span class="time" id="time"></span>
+    <div class="row">
+      <div class="col-1">
+        <img src="" class="description-icon" id="description-icon" /></div>
+<div class="col-3 today-summary">
+
+            <div class="time" id="time"></div>
             <div class="place-name" id="place-name"></div>
-            <span class="temperature" id="temperature"></span>
-            <div class="temperature-feels" id="temperature-feels"></div>
-            <div class="current-description" id="current-description"></div>
-          </span>
-
-          <span class="col-2">
-            <img src="" class="description-icon" id="description-icon" />
-          </span>
-
-          <div class="col-7 searched-form">
+            <div class="description" id="current-description"></div>
+</div>
+<div class="col-8">
             <form class="row search-form" id="search-form">
-              <div class="col-auto">
+              <div class="col-11">
                 <input
                   type="search"
                   autofocus="on"
@@ -51,16 +47,11 @@
                   autocomplete="off"
                 />
               </div>
-              <div class="col-auto">
-                <button type="submit" class="btn btn-primary search-button">
-                  Search
-                </button>
-              </div>
 
-              <div class="col-auto">
+              <div class="col-1">
                 <button
                   type="button"
-                  class="btn search-button"
+                  class="btn button"
                   id="user-location-button"
                   class="material-symbols-outlined"
                 >
@@ -69,131 +60,92 @@
               </div>
             </form>
           </div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div class="container card-container">
-          <div class="row cards">
-            <div class="col card btn btn-secondary" type="button">
-              <img src="" class="card-img-top" alt="" />
-              <div class="card-body">
-                <p class="card-text">
-                  <br />
-                </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <section class="row container">
+   <div class="col">
+          <div class = "row">
+             
+              <div class="col-3">
+        
+              
+                  <div class="temperature" id="temperature"></div>
+                  <div class="temperature-feels" id="temperature-feels"></div>
+             
               </div>
-            </div>
-            <div class="col card btn btn-secondary" type="button">
-              <img src="" class="card-img-top" alt="" />
-              <div class="card-body">
-                <p class="card-text">
-                  <span class="material-symbols-outlined icon"> air </span>
-                  <br />
-                  Speed:<span
-                    class="current-wind-speed"
-                    id="current-wind-speed"
-                  ></span>
-                  km/h
-
-                  <br />
-
-                  Direction:
-                  <span
+    
+              <div class="col-3">
+              
+                <span class="wind-stats">
+           <span class="current-wind-speed" id="current-wind-speed"></span>
+           <br>      <span
                     class="current-wind-direction"
                     id="current-wind-direction"
                   ></span>
-                </p>
+                </span>
               </div>
-            </div>
-
-            <div class="col card btn btn-secondary" class="" type="button">
-              <img src="" class="card-img-top" alt="" />
-              <div class="card-body">
-                <p class="card-text">
-                  <span class="material-symbols-outlined icon">
-                    humidity_percentage
-                  </span>
-                  <br />
-                  Humidity:
-                  <span class="current-humidity" id="current-humidity"></span>%
-                </p>
+                        <div class="col-3">
+            
+                <span
+                  class="current-humidity"
+                  id="current-humidity"
+                ></span>
               </div>
-            </div>
-            <div class="col card btn btn-secondary" type="button">
-              <img src="" class="card-img-top" alt="" />
-              <div class="card-body">
-                <p class="card-text">
-                  <span class="material-symbols-outlined icon"> eco </span>
-                  <br />
-                  Air Quality:
-                  <span
-                    class="current-air-quality"
-                    id="current-air-quality"
-                  ></span>
-                </p>
+              <div class="col-3">
+            
+                <span
+                  class="current-air-quality"
+                  id="current-air-quality"
+                ></span>
               </div>
-            </div>
-
-            <div class="col card btn btn-secondary" type="button">
-              <img class="card-img-top" alt="" />
-              <div class="card-body">
-                <p class="card-text">
-                  <span class="material-symbols-outlined icon"> UVI </span>
-                  <br />
-                  UVI:
-                  <span class="current-uvi" id="current-uvi"></span>
-                </p>
+              <div class="col-3">
+      
+                <span
+                  class="current-visibility"
+                  id="current-visibility"
+                ></span>
               </div>
-            </div>
-
-            <div class="col card btn btn-secondary" type="button">
-              <img src="" class="card-img-top" alt="" />
-              <div class="card-body">
-                <p class="card-text">
-                  <span class="material-symbols-outlined icon">
-                    visibility
-                  </span>
-                  <br />
-                  Visibility:
-                  <span
-                    class="current-visibility"
-                    id="current-visibility"
-                  ></span
-                  >km
-                </p>
-              </div>
-            </div>
-
-            <div class="col card btn btn-secondary" type="button">
-              <img
-                src="src/images/sun.png"
-                alt="Learning About The Moon And The Sun - Day And Night Icon @clipartmax.com"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <p class="card-text">
-                  <span class="material-symbols-outlined icon"> routine </span>
-                  <br />
+              <div class="col-3">
+            
+                <span class="current-uvi" id="current-uvi"></span>
+              </div>  
+              <div class="col-3">
+   
+              
                   Sunrise:
-                  <span
+                  <div
                     class="sunrise-time-today"
                     id="sunrise-time-today"
-                  ></span>
-
+                  ></div>
+       
+                </div>
+                <div class="col-3">
                   Sunset:
-                  <span class="sunset-time-today" id="sunset-time-today"></span>
-                </p>
+                  <div class="sunset-time-today" id="sunset-time-today"></div>
+                </div>
+     
               </div>
             </div>
+            <div class="col">
+            <div class="weather-forecast description" id="forecast"></div></div>
           </div>
-        </div>
+        </section>
 
-        <div class="weather-forecast" id="forecast"></div>
       </div>
     </div>
 

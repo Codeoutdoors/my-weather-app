@@ -57,6 +57,9 @@ function displayWeatherInformation(response) {
     response.data.main.feels_like
   )}°C `;
 
+  let windSpeed = document.querySelector("#current-wind-speed");
+  windSpeed.innerHTML = ` ${Math.round(response.data.wind.speed * 3.6)}km/h`;
+
   let allIcons = [
     "clear sky",
     "clouds",
@@ -98,12 +101,13 @@ function displayWeatherInformation(response) {
   }
   document.querySelector("#current-description").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#current-visibility").innerHTML = Math.round(
+  document.querySelector("#current-visibility").innerHTML = `${Math.round(
     response.data.visibility / 1000
-  );
+  )}km`;
 
-  document.querySelector("#current-humidity").innerHTML =
-    response.data.main.humidity;
+  document.querySelector(
+    "#current-humidity"
+  ).innerHTML = `${response.data.main.humidity}%`;
 
   let localDate = new Date();
   let localOffset = localDate.getTimezoneOffset() * 60000;
@@ -146,10 +150,6 @@ function displayWeatherInformation(response) {
   let sunsetMinutes = String(sunsetTime.getMinutes()).padStart(2, `0`);
   let sunset = `${sunsetHours}:${sunsetMinutes}`;
   sunsetTimeToday.innerHTML = sunset;
-
-  document.querySelector("#current-wind-speed").innerHTML = Math.round(
-    response.data.wind.speed * 3.6
-  );
 
   let degrees = response.data.wind.deg;
 
@@ -211,13 +211,14 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
   console.log(apiUrl);
 }
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  document.querySelector("#current-uvi").innerHTML = Math.round(
+  document.querySelector("#current-uvi").innerHTML = `UVI: ${Math.round(
     response.data.current.uvi
-  );
+  )}`;
 
   let forecastHTML = `<div class="row">`;
 
@@ -246,7 +247,8 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         ` 
-<div class="col">
+<div class="col-2">
+<div class= "forecast-wrapper">
   <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
   <img
     src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
@@ -283,13 +285,18 @@ function displayForecast(response) {
 <div class="weather-forecast-uvi"> UVI: ${Math.round(forecastDay.uvi)}
 
 </div>
-</div>
+
 
 <div class="weather-forecast-pop"> POP: ${Math.round(forecastDay.pop * 100)}%
 
 </div>
 
 
+
+<div class="weather-forecast-description">  ${forecastDay.weather[0].description.toLowerCase()};
+
+</div>
+</div>
 </div>
 `;
     }

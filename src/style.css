@@ -1,115 +1,83 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-image: url("images/background.jpg");
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("");
   background-size: cover;
   background-repeat: no-repeat;
 }
 small {
   text-align: left;
 }
-
 .app-wrapper {
   margin-top: 50px;
 }
+
 .app-border {
   border-radius: 24px;
-  border: 1px solid rgb(27, 101, 106);
-  box-shadow: 0 8px 32px 0 rgba(27, 101, 106, 0.37);
+  border: 1px solid rgb(20, 31, 32);
+  box-shadow: 0 8px 32px 0 rgba(20, 31, 32, 0.37);
   padding: 15px;
   margin: auto;
   width: 800px;
   height: 600px;
 }
-.picture {
-  color: #1b666c;
-  font-size: 10px;
-}
 .my-weather-app {
   color: #ce656c;
   padding: 10px;
 }
-.current-summary {
-  float: left;
-  font-size: 15px;
-  font-weight: 550;
-  color: #1b666c;
-  width: 190px;
-  text-align: left;
-}
-.place-name {
-  font-size: 30px;
-}
 
-.searched-form {
-  float: right;
-  max-width: 500px;
+.summary {
+  float: left;
 }
 .search-form {
-  float: right;
-  margin: 0px;
-  max-width: 450px;
+  margin-right: 1%;
 }
 .form-control {
   background: #ede8e6;
   border: #ce656c;
 }
+
 .form-control:focus {
   color: #1b666c;
   background-color: #e4e5e3;
   border-color: #1b666c;
   box-shadow: 0 0 0 0.25rem rgb(25 112 122 / 25%);
 }
-.card-container {
-  padding-top: 120px;
-  padding-left: 0px;
-  padding-right: 0px;
+
+.col-3 {
+  margin-top: 20px;
+}
+.description {
+  text-transform: capitalize;
+}
+.description-icon {
+  width: 50px;
+}
+.container {
+  display: flex;
+  width: 100%;
+}
+#col-1 {
+  flex: 1;
 }
 
-.search-button:hover {
+#col-2 {
+  flex: 1;
+}
+.button:hover {
   background: #e4e5e3;
   color: #1b666c;
 }
-.search-button {
+.button {
   color: #e4e5e3;
   background: #1b666c;
   opacity: 0.9;
   border: #1b666c;
 }
-.card {
-  background: none;
-  font-size: 10px;
-  font-weight: 550;
-  color: #1b666c;
-}
+
 .btn-secondary:hover {
   background: none;
 }
-.description-icon {
-  width: 50%;
-}
+
 .footer {
   margin-left: 125px;
-}
-.col-auto {
-  padding-left: 0px;
-}
-.priority-bar {
-  max-width: 230px;
-  font-size: small;
-  margin: auto;
-}
-
-.units {
-  font-weight: 800;
-}
-.units .active {
-  color: #1b666c;
-  cursor: text;
-  text-decoration: none;
-}
-.units .active .hover {
-  cursor: default;
-}
-.current-description {
-  text-transform: capitalize;
 }
