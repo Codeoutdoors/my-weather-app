@@ -48,9 +48,7 @@ function displayWeatherInformation(response) {
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
   let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = `Temp: ${Math.round(
-    response.data.main.temp
-  )}°C`;
+  currentTemperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
 
   let currentTemperatureFeels = document.querySelector("#temperature-feels");
   currentTemperatureFeels.innerHTML = `Feels like: ${Math.round(
@@ -125,13 +123,30 @@ function displayWeatherInformation(response) {
     "Friday",
     "Saturday",
   ];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let date = time.getDate();
+  let month = months[time.getMonth()];
 
   let day = days[time.getDay()];
   let minute = ("0" + time.getMinutes()).slice(-2);
   let hour = ("0" + time.getHours()).slice(-2);
-
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = `${day}, ${date} ${month}`;
   let timeElement = document.querySelector("#time");
-  timeElement.innerHTML = `${day}  ${hour}:${minute} `;
+  timeElement.innerHTML = `${hour}:${minute}`;
 
   let sunriseTimeToday = document.querySelector("#sunrise-time-today");
   let sunriseUnix = response.data.sys.sunrise * 1000;
@@ -200,7 +215,15 @@ function handleSubmit(event) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   return days[day];
 }
 
@@ -247,14 +270,26 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         ` 
-<div class="col-2">
-<div class= "forecast-wrapper">
-  <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-  <img
-    src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
-    alt=""
-    width="42"
-  />
+
+      <div class="col-3 card">
+        <div class="top-section">
+         
+        <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
+          
+          <div class="row">
+          <img class=" col forecast-img" src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"> <span  class="col forecast-temperature"> ${Math.round(
+          forecastDay.temp.day
+        )}°</span>
+          </div>
+          
+</div>
+          <div class="card-body">
+     
+            
+
+        
   <div class="weather-forecast-temperatures">
     <span class="weather-forecast-temperature-max"> ${Math.round(
       forecastDay.temp.max

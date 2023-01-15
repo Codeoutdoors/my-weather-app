@@ -27,124 +27,122 @@
   <body>
     <div class="app-wrapper">
       <div class="app-border">
-    <div class="row">
-      <div class="col-1">
-        <img src="" class="description-icon" id="description-icon" /></div>
-<div class="col-3 today-summary">
 
-            <div class="time" id="time"></div>
-            <div class="place-name" id="place-name"></div>
-            <div class="description" id="current-description"></div>
-</div>
-<div class="col-8">
-            <form class="row search-form" id="search-form">
-              <div class="col-11">
-                <input
-                  type="search"
-                  autofocus="on"
-                  class="form-control"
-                  id="city-input"
-                  autocomplete="off"
-                />
-              </div>
-
-              <div class="col-1">
-                <button
-                  type="button"
-                  class="btn button"
-                  id="user-location-button"
-                  class="material-symbols-outlined"
-                >
-                  <i class="fas fa-map-marker-alt"></i>
-                </button>
-              </div>
-            </form>
+        <form class="row search-form" id="search-form">
+          <div class="col search-box">
+            <input
+              type="search"
+              autofocus="on"
+              class="form-control"
+              id="city-input"
+              autocomplete="off"
+            />
           </div>
-    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <section class="row container">
-   <div class="col">
-          <div class = "row">
-             
-              <div class="col-3">
+          <div class="col">
+            <button
+              type="button"
+              class="btn button"
+              id="user-location-button"
+              class="material-symbols-outlined"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
+          </div>
+        </form>
+        <span class="place-name" id="place-name"></span>
+        <br><br><br>
         
-              
-                  <div class="temperature" id="temperature"></div>
-                  <div class="temperature-feels" id="temperature-feels"></div>
-             
-              </div>
-    
-              <div class="col-3">
-              
-                <span class="wind-stats">
-           <span class="current-wind-speed" id="current-wind-speed"></span>
-           <br>      <span
-                    class="current-wind-direction"
-                    id="current-wind-direction"
-                  ></span>
-                </span>
-              </div>
-                        <div class="col-3">
-            
-                <span
-                  class="current-humidity"
-                  id="current-humidity"
-                ></span>
-              </div>
-              <div class="col-3">
-            
-                <span
-                  class="current-air-quality"
-                  id="current-air-quality"
-                ></span>
-              </div>
-              <div class="col-3">
+<ul class="today">
       
-                <span
-                  class="current-visibility"
-                  id="current-visibility"
-                ></span>
-              </div>
-              <div class="col-3">
+
+      <li class="date-time">
+        <span class = "date" id="date"></span>
+                  <span class="time" id="time"></span>
+      </li>  
+ <li class="section">
+  <img src="" class="description-icon" id="description-icon" />
+  
+  <span class="temperature" id="temperature"></span>
+ </li>
+ <li class="description" id="current-description"></li>
+ <li><span class="material-symbols-outlined">
+  humidity_percentage
+  </span><span class="current-humidity"
+ id="current-humidity"></span>  
+</li>
+ 
+ <li class="wind-stats">
+  <span class="current-wind-speed" id="current-wind-speed"></span>
+        <span
+           class="current-wind-direction"
+           id="current-wind-direction"
+         ></span>
+ </li>
+ 
+ <li class="temperature-feels" id="temperature-feels"></li>
+
+
+
+
+
+ 
+
+<li
+ class="current-air-quality"
+ id="current-air-quality"
+></li>
+
+<li
+ class="current-visibility"
+ id="current-visibility"
+></li>
+
+
+
+<li class="current-uvi" id="current-uvi"></li>
+
+<li class="sun">
+ Sunrise:
+ <div
+   class="sunrise-time-today"
+   id="sunrise-time-today"></div>
+   Sunset:
+   <div class="sunset-time-today" id="sunset-time-today"></div>
+ </li>
+
+</ul>
+
+
+<div class="weather-forecast" id="forecast"></div>
+
+
+
+        
+
+
+      <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+
+
+
+
+     
+    
+        
+                  
             
-                <span class="current-uvi" id="current-uvi"></span>
-              </div>  
-              <div class="col-3">
-   
-              
-                  Sunrise:
-                  <div
-                    class="sunrise-time-today"
-                    id="sunrise-time-today"
-                  ></div>
        
                 </div>
-                <div class="col-3">
-                  Sunset:
-                  <div class="sunset-time-today" id="sunset-time-today"></div>
-                </div>
+           
      
-              </div>
+          
             </div>
-            <div class="col">
-            <div class="weather-forecast description" id="forecast"></div></div>
-          </div>
-        </section>
+          
+          
 
       </div>
     </div>

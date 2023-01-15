@@ -1,5 +1,5 @@
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-image: url("");
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,61 +21,92 @@ small {
   height: 600px;
 }
 .my-weather-app {
-  color: #ce656c;
   padding: 10px;
 }
+ul {
+  list-style: none;
+  padding: 0%;
 
-.summary {
   float: left;
 }
-.search-form {
-  margin-right: 1%;
-}
-.form-control {
-  background: #ede8e6;
-  border: #ce656c;
+.card {
+  margin: 8px;
+  padding: 0%;
+  width: 160px;
 }
 
+.card-body {
+  padding: 4px;
+}
+.forecast-img {
+  width: 70px;
+  position: relative;
+  top: -16px;
+}
+
+.place-name {
+  float: right;
+}
+.forecast-temperature {
+  font-size: 25px;
+}
+.place-name {
+  font-size: 40px;
+  font-weight: 700;
+  width: fit-content;
+}
+.search-box {
+  padding-right: 0px;
+}
+.forecast-date {
+  text-align: center;
+}
+.date-time {
+  font-size: 20px;
+}
+.search-form {
+  margin-bottom: 10px;
+  float: left;
+  width: 600px;
+}
+.today {
+  margin-right: 30px;
+}
+.section {
+  height: 80px;
+}
+.description-icon {
+  height: 100%;
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.temperature {
+  vertical-align: middle;
+  font-size: 53px;
+}
 .form-control:focus {
-  color: #1b666c;
-  background-color: #e4e5e3;
-  border-color: #1b666c;
   box-shadow: 0 0 0 0.25rem rgb(25 112 122 / 25%);
 }
-
 .col-3 {
   margin-top: 20px;
 }
 .description {
   text-transform: capitalize;
+  font-size: 20px;
 }
-.description-icon {
-  width: 50px;
-}
+
 .container {
   display: flex;
   width: 100%;
 }
-#col-1 {
-  flex: 1;
-}
-
-#col-2 {
-  flex: 1;
-}
 .button:hover {
-  background: #e4e5e3;
-  color: #1b666c;
 }
 .button {
-  color: #e4e5e3;
-  background: #1b666c;
-  opacity: 0.9;
-  border: #1b666c;
+  background-color: rgb(131, 131, 216);
 }
 
 .btn-secondary:hover {
-  background: none;
 }
 
 .footer {
