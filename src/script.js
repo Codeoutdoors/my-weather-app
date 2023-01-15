@@ -143,10 +143,8 @@ function displayWeatherInformation(response) {
   let day = days[time.getDay()];
   let minute = ("0" + time.getMinutes()).slice(-2);
   let hour = ("0" + time.getHours()).slice(-2);
-  let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = `${day}, ${date} ${month}`;
-  let timeElement = document.querySelector("#time");
-  timeElement.innerHTML = `${hour}:${minute}`;
+  let dateElement = document.querySelector("#date-time");
+  dateElement.innerHTML = `${day}, ${date} ${month} ${hour}:${minute}`;
 
   let sunriseTimeToday = document.querySelector("#sunrise-time-today");
   let sunriseUnix = response.data.sys.sunrise * 1000;
