@@ -347,4 +347,4 @@ userLocationButton.addEventListener("click", handleClick);
 let temperatureForecast = document.querySelector("#temperature");
 temperatureForecast.addEventListener("click", getForecast);
 
-defineCity("Banff");
+defineCity("Manchester");
