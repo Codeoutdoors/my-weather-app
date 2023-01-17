@@ -1,51 +1,76 @@
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-image: url("");
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-image: url("images/lake.jpg");
+
   background-size: cover;
   background-repeat: no-repeat;
 }
 small {
-  text-align: left;
+  position: relative;
+  bottom: 120px;
+  left: -105px;
+  font-size: 15px;
+  color: white;
+}
+.today {
+  list-style: none;
+  position: relative;
+  top: -30px;
 }
 .app-wrapper {
   margin-top: 50px;
+  margin: auto;
 }
 
+.forecast-date {
+  font-weight: 600;
+}
 .app-border {
   border-radius: 24px;
-  border: 1px solid rgb(20, 31, 32);
+  border: 1px solid rgb(14, 20, 21);
   box-shadow: 0 8px 32px 0 rgba(20, 31, 32, 0.37);
   padding: 15px;
   margin: auto;
-  width: fit-content;
+  margin-top: 20px;
+  width: 850px;
+  height: 570px;
+  background: rgba(243, 236, 236, 0.25);
 }
+
 .my-weather-app {
   padding: 10px;
 }
-.today {
-  float: left;
+
+.top-banner {
+  padding: 10px;
 }
-ul {
-  list-style: none;
-  padding: 0%;
+.forecast-container {
+  width: 100%;
+  position: relative;
+  top: -150px;
+  padding-left: 25px;
 }
 .card {
-  margin: 8px;
-  padding: 0%;
-  width: 120px;
+  background: none;
+  margin: 5px;
+  padding: 2px;
+  height: 145px;
 }
 
 .card-body {
-  padding: 4px;
-}
-.forecast-img {
-  width: 70px;
   position: relative;
-  top: -16px;
+  top: -30px;
+  font-size: 15px;
 }
 
+.forecast-img {
+  width: 50px;
+  position: relative;
+  top: -9px;
+  float: left;
+}
 .forecast-temperature {
-  font-size: 25px;
+  font-size: 24px;
 }
 .place-name {
   font-size: 35px;
@@ -54,7 +79,7 @@ ul {
 .search-box {
   padding-right: 0px;
 }
-.forecast-date {
+.top-section {
   text-align: center;
 }
 .date-time {
@@ -63,59 +88,100 @@ ul {
   font-size: 18px;
 }
 .place-time {
-  text-align: right;
+  text-align: left;
   position: relative;
   top: -20px;
-  max-width: 40%;
+  max-width: 50%;
   width: fit-content;
-  float: right;
+  float: left;
 }
 
 .search-form {
   max-width: 50%;
   width: 100%;
-  margin-bottom: 10px;
-  float: left;
-}
-.today {
-  margin-right: 30px;
+  float: right;
 }
 
-.description-icon {
-  height: 100%;
-  width: 20px;
-  float: left;
-  vertical-align: middle;
-  margin-right: 10px;
+img.description-icon {
+  width: 70px;
 }
 .temperature {
-  vertical-align: middle;
-  font-size: 53px;
+  font-size: 50px;
+  text-align: left;
 }
 .form-control:focus {
   box-shadow: 0 0 0 0.25rem rgb(25 112 122 / 25%);
 }
-.col-3 {
-  margin-top: 20px;
+.forecast-description {
+  text-transform: capitalize;
+  font-size: 13px;
 }
 .description {
   text-transform: capitalize;
-  font-size: 20px;
+  font-size: 30px;
+}
+.one {
+  max-width: 30%;
+  text-align: center;
+  margin: auto;
+}
+.two {
+  margin-top: 10px;
+  border-right: 1px solid rgb(14, 20, 21);
+  text-align: right;
+}
+.three {
+  margin-top: 12px;
+}
+.material-symbols-outlined {
+  position: relative;
+  top: 7px;
+}
+.sun-icon {
+  width: 100px;
+}
+.forecast-wind {
+  text-align: center;
 }
 
+.wind-icon {
+  font-size: 15px;
+  top: 2px;
+}
+.sun-up {
+  float: left;
+}
+.sun-down {
+  float: right;
+}
+.right-side {
+  line-height: 31px;
+}
+.left-side {
+  vertical-align: middle;
+}
+.four {
+  position: relative;
+  top: -200px;
+  font-size: 30px;
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 .container {
   display: flex;
   width: 100%;
 }
 .button:hover {
-  background-color: aqua;
+  background: none;
+  color: white;
 }
 .button {
-  background-color: rgb(131, 131, 216);
+  background-color: none;
 }
 
 .btn-secondary:hover {
-  background-color: aliceblue;
+  background-color: none;
 }
 
 .footer {

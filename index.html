@@ -27,137 +27,112 @@
   <body>
     <div class="app-wrapper">
       <div class="app-border">
-<div class="top-banner">
-        <form class="row search-form" id="search-form">
-          <div class="col-10 search-box">
-            <input
-              type="search"
-              autofocus="on"
-              class="form-control"
-              id="city-input"
-              autocomplete="off"
-            />
+        <header class="top-banner clearfix">
+          <div class="place-time">
+            <div class="place-name" id="place-name"></div>
+            <div class="date-time" id="date-time"></div>
           </div>
-
-          <div class="col-2">
-            <button
-              type="button"
-              class="btn button"
-              id="user-location-button"
-              class="material-symbols-outlined"
-            >
-              <i class="fas fa-map-marker-alt"></i>
-            </button>
-          </div>
-        </form>
-<div class="place-time">
-        <div class="place-name" id="place-name"></div>
-        <div class="date-time">
-          <span id="date-time"></span>
-        </div>  
-      </div>
-              </div>
-  
-        <br><br>
-<ul class="today">
-      
-
- <li class="section">
-  <img src="" class="description-icon" id="description-icon" />
-  
-  <span class="temperature" id="temperature"></span>
- </li>
- <li class="description" id="current-description"></li>
- <li><span class="material-symbols-outlined">
-  humidity_percentage
-  </span><span class="current-humidity"
- id="current-humidity"></span>  
-</li>
- 
- <li class="wind-stats">
-  <span class="current-wind-speed" id="current-wind-speed"></span>
-        <span
-           class="current-wind-direction"
-           id="current-wind-direction"
-         ></span>
- </li>
- 
- <li class="temperature-feels" id="temperature-feels"></li>
-
-
-
-
-
- 
-
-<li
- class="current-air-quality"
- id="current-air-quality"
-></li>
-
-<li
- class="current-visibility"
- id="current-visibility"
-></li>
-
-
-
-<li class="current-uvi" id="current-uvi"></li>
-
-<li class="sun">
- Sunrise:
- <div
-   class="sunrise-time-today"
-   id="sunrise-time-today"></div>
-   Sunset:
-   <div class="sunset-time-today" id="sunset-time-today"></div>
- </li>
-
-</ul>
-
-
-<div class="weather-forecast" id="forecast"></div>
-
-
-
-        
-
-
-      <br/>
-    <br/>
-    <br/>
-    <br/>
-    
-
-
-
-
-     
-    
-        
-                  
-            
-       
-                </div>
-           
-     
-          
+          <form class="row search-form" id="search-form">
+            <div class="col-10 search-box">
+              <input
+                type="search"
+                autofocus="on"
+                class="form-control"
+                id="city-input"
+                autocomplete="off"
+              />
             </div>
-          
-          
 
+            <div class="col-2">
+              <button
+                type="button"
+                class="btn button"
+                id="user-location-button"
+                class="material-symbols-outlined"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </div>
+          </form>
+        </header>
+
+        <div class="today">
+          <div class="row one">
+            <div class="col-12 description" id="current-description"></div>
+            <br />
+            <div class="col-6">
+              <img src="" class="description-icon" id="description-icon" />
+            </div>
+            <span class="col-6 temperature" id="temperature"></span>
+          </div>
+          <div class="row current">
+            <div class="col two">
+              <p>
+                <span class="material-symbols-outlined">
+                  humidity_percentage
+                </span>
+                <span class="current-humidity" id="current-humidity"></span>
+              </p>
+              <p>
+                <span class="material-symbols-outlined">
+                  device_thermostat
+                </span>
+                <span class="temperature-feels" id="temperature-feels"></span>
+              </p>
+              <p>
+                <span class="material-symbols-outlined"> air</span>
+
+                <span class="current-wind-speed" id="current-wind-speed"></span>
+                <span
+                  class="current-wind-direction"
+                  id="current-wind-direction"
+                ></span>
+              </p>
+            </div>
+
+            <div class="col three">
+              <p class="right-side">
+                <span class="current-uvi" id="current-uvi"></span>
+              </p>
+              <p class="right-side">
+                Air Quality:
+                <span
+                  class="current-air-quality"
+                  id="current-air-quality"
+                ></span>
+              </p>
+
+              <p class="right-side">
+                Visibility:
+                <span class="current-visibility" id="current-visibility"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="four">
+            <div class="sun-up">
+              <img class="sun-icon" src="src/images/sunup.png" />
+              <div class="sunrise-time-today" id="sunrise-time-today"></div>
+            </div>
+            <div class="sun-down">
+              <img class="sun-icon" src="src/images/sundown.png" />
+              <div class="sunset-time-today" id="sunset-time-today"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="forecast" id="forecast"></div>
+        <small>
+          <a
+            href="https://github.com/Codeoutdoors/my-weather-app"
+            target="_blank"
+            class="footer"
+          >
+            Open-source code</a
+          >, by Suzy Stevenson
+        </small>
       </div>
     </div>
-
-    <small>
-      <a
-        href="https://github.com/Codeoutdoors/my-weather-app"
-        target="_blank"
-        class="footer"
-      >
-        Open-source code</a
-      >, by Suzy Stevenson
-    </small>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

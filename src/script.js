@@ -15,22 +15,22 @@ function displayAqi(response) {
 function degToCompass(degrees) {
   let value = Math.floor(degrees / 22.5 + 0.5);
   let direction = [
-    "N",
-    "NNE",
-    "NE",
-    "ENE",
-    "E",
-    "ESE",
-    "SE",
-    "SSE",
-    "S",
-    "SSW",
-    "SW",
-    "WSW",
-    "W",
-    "WNW",
-    "NW",
-    "NNW",
+    "↓ N",
+    "↙ NNE",
+    "↙ NE",
+    "↙ ENE",
+    "← E",
+    "↖ ESE",
+    "↖ SE",
+    "↖ SSE",
+    "↑ S",
+    "↗ SSW",
+    "↗ SW",
+    "↗ WSW",
+    "→ W",
+    "↘ WNW",
+    "↘ NW",
+    "↘ NNW",
   ];
 
   document.querySelector("#current-wind-direction").innerHTML =
@@ -48,12 +48,12 @@ function displayWeatherInformation(response) {
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
   let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  currentTemperature.innerHTML = `${Math.round(response.data.main.temp)}°c`;
 
   let currentTemperatureFeels = document.querySelector("#temperature-feels");
-  currentTemperatureFeels.innerHTML = `Feels like: ${Math.round(
+  currentTemperatureFeels.innerHTML = `Feels like ${Math.round(
     response.data.main.feels_like
-  )}°C `;
+  )}°c `;
 
   let windSpeed = document.querySelector("#current-wind-speed");
   windSpeed.innerHTML = ` ${Math.round(response.data.wind.speed * 3.6)}km/h`;
@@ -241,94 +241,65 @@ function displayForecast(response) {
     response.data.current.uvi
   )}`;
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row forecast-container">`;
 
   forecast.forEach(function (forecastDay, index) {
     let degrees = forecastDay.wind_deg;
     let value = Math.floor(degrees / 22.5 + 0.5);
     let direction = [
-      "N",
-      "NNE",
-      "NE",
-      "ENE",
-      "E",
-      "ESE",
-      "SE",
-      "SSE",
-      "S",
-      "SSW",
-      "SW",
-      "WSW",
-      "W",
-      "WNW",
-      "NW",
-      "NNW",
+      "↓ N",
+      "↙ NNE",
+      "↙ NE",
+      "↙ ENE",
+      "← E",
+      "↖ ESE",
+      "↖ SE",
+      "↖ SSE",
+      "↑ S",
+      "↗ SSW",
+      "↗ SW",
+      "↗ WSW",
+      "→ W",
+      "↘ WNW",
+      "↘ NW",
+      "↘ NNW",
     ];
     if (index < 6) {
       forecastHTML =
         forecastHTML +
         ` 
 
-      <div class="col-3 card">
+      <div class="col card">
         <div class="top-section">
          
         <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
           
-          <div class="row">
-          <img class=" col forecast-img" src="http://openweathermap.org/img/wn/${
+        <div class="forecast-description">  ${forecastDay.weather[0].description.toLowerCase()} </div>
+<div class="icon-temp clearfix">
+       
+          <img class="forecast-img" src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
-          }@2x.png"> <span  class="col forecast-temperature"> ${Math.round(
-          forecastDay.temp.day
-        )}°</span>
+          }@2x.png"> 
+          <div  class="forecast-temperature"> ${Math.round(
+            forecastDay.temp.day
+          )}°c</div>
           </div>
-          
-</div>
-          <div class="card-body">
-     
-            
 
+          </div>
         
-  <div class="weather-forecast-temperatures">
-    <span class="weather-forecast-temperature-max"> ${Math.round(
-      forecastDay.temp.max
-    )}°</span>
-    <span class="weather-forecast-temperature-min"> ${Math.round(
-      forecastDay.temp.min
-    )}° </span>
+          <div class="card-body">
+
+     
+
+  <div class="forecast-wind">
+  <span class="forecast-wind-speed"> <span class="wind-icon material-symbols-outlined">
+  air
+  </span>${Math.round(forecastDay.wind_speed * 3.6)}km/h        
+  </span>
+
+  <div class="forecast-wind-direction"> ${direction[value % 16]} </div>
+
   </div>
-
-
-  
-  <div class="weather-forecast-wind">
-  <span class="weather-forecast-wind-speed"> ${Math.round(
-    forecastDay.wind_speed * 3.6
-  )} km/h        
-  </span>
-  <span class="weather-forecast-wind-gust"> ${Math.round(
-    forecastDay.wind_gust * 3.6
-  )} km/h        
-  </span>
-  <span class="weather-forecast-wind-direction"> ${
-    direction[value % 16]
-  } </span>
-
-
-</div>
-
-<div class="weather-forecast-uvi"> UVI: ${Math.round(forecastDay.uvi)}
-
-</div>
-
-
-<div class="weather-forecast-pop"> POP: ${Math.round(forecastDay.pop * 100)}%
-
-</div>
-
-
-
-<div class="weather-forecast-description">  ${forecastDay.weather[0].description.toLowerCase()};
-
-</div>
 </div>
 </div>
 `;
@@ -344,7 +315,4 @@ searchForm.addEventListener("submit", handleSubmit);
 let userLocationButton = document.querySelector("#user-location-button");
 userLocationButton.addEventListener("click", handleClick);
 
-let temperatureForecast = document.querySelector("#temperature");
-temperatureForecast.addEventListener("click", getForecast);
-
-defineCity("Manchester");
+defineCity("Banff");
